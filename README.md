@@ -1,12 +1,12 @@
-# ⚽ KickOff Assistant — Voice-Enabled Football Dialog System
+# ⚽ KickOff Assistant - Voice-Enabled Football Dialog System
 
-> A conversational AI assistant for football fans — ask about players, squads, careers, or test your knowledge with an interactive quiz. Fully voice-enabled with Speech-to-Text and Text-to-Speech.
+> A conversational AI assistant for football fans - ask about players, squads, careers, or test your knowledge with an interactive quiz. Fully voice-enabled with Speech-to-Text and Text-to-Speech.
 
 ---
 
 ## 📌 Project Overview
 
-**KickOff Assistant** is a dialog system built with [Rasa Open Source](https://rasa.com/) that lets users interact naturally — by voice or text — with a football knowledge base covering the **Top 5 European Leagues** (Premier League, La Liga, Bundesliga, Serie A, Ligue 1).
+**KickOff Assistant** is a dialog system built with [Rasa Open Source](https://rasa.com/) that lets users interact naturally - by voice or text - with a football knowledge base covering the **Top 5 European Leagues** (Premier League, La Liga, Bundesliga, Serie A, Ligue 1).
 
 Built as a practical assignment for the *Introduction to Speech and Natural Language Processing* course @ University of Aveiro (Erasmus), 2025/2026.
 
@@ -17,7 +17,7 @@ Built as a practical assignment for the *Introduction to Speech and Natural Lang
 | Mode | Description |
 |------|-------------|
 | 🗣️ **Info Mode** | Ask about players, squads, careers, nationalities, positions |
-| 🧠 **Quiz Mode** | Interactive football trivia — bot asks questions, scores your answers |
+| 🧠 **Quiz Mode** | Interactive football trivia - bot asks questions, scores your answers |
 | 🎙️ **Voice I/O** | Speech-to-Text input + Text-to-Speech output |
 
 ### Example interactions
@@ -64,7 +64,7 @@ Voice Input (mic)
 
 ---
 
-## 🧠 NLU — Intents & Entities
+## 🧠 NLU - Intents & Entities
 
 ### Intents
 
@@ -84,8 +84,8 @@ Voice Input (mic)
 
 ### Entities
 
-- `player_name` — e.g. *Haaland*, *Mbappe*, *Bellingham*
-- `team_name` — e.g. *Arsenal*, *Barcelona*, *PSG*
+- `player_name` - e.g. *Haaland*, *Mbappe*, *Bellingham*
+- `team_name` - e.g. *Arsenal*, *Barcelona*, *PSG*
 
 ---
 
@@ -132,7 +132,7 @@ Quiz questions sourced from:
 **[Open Trivia Database](https://opentdb.com/api.php?amount=50&category=21&type=multiple)**
 > Free, community-maintained trivia API. Category 21 = Sports.
 
-> ⚠️ The raw dataset is pre-processed into `data/players.json` and `data/teams.json` — only relevant fields (name, club, nationality, position, age) are kept to keep the system lightweight.
+> ⚠️ The raw dataset is pre-processed into `data/players.json` and `data/teams.json` - only relevant fields (name, club, nationality, position, age) are kept to keep the system lightweight.
 
 ---
 
@@ -225,7 +225,7 @@ start_quiz → [ActionStartQuiz] → question
 ## 👤 Author
 
 **[Your Name]**
-Erasmus Student @ University of Aveiro — DETI
+Erasmus Student @ University of Aveiro - DETI
 Home university: Lodz University of Technology
 Course: Introduction to Speech and Natural Language Processing, 2025/2026
 Supervisor: Prof. António Teixeira
@@ -234,6 +234,6 @@ Supervisor: Prof. António Teixeira
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
 Dataset credits to respective Kaggle authors and Open Trivia DB contributors.
