@@ -1,0 +1,29 @@
+version: "3.1"
+
+stories:
+  - story: player info path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_player_info
+      - action: action_player_info
+      - intent: thank
+      - action: utter_thanks
+
+  - story: team squad path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_team_squad
+      - action: action_team_squad
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: player stats path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_player_stats
+      - action: action_player_stats
+      - intent: thank
+      - action: utter_thanks

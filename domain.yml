@@ -1,0 +1,51 @@
+version: "3.1"
+
+intents:
+  - greet
+  - thank
+  - goodbye
+  - ask_player_info
+  - ask_team_squad
+  - ask_player_position
+  - ask_player_nationality
+  - ask_player_stats
+  - out_of_scope
+
+entities:
+  - player_name
+  - team_name
+
+slots:
+  player_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: player_name
+  team_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: team_name
+
+responses:
+  utter_greet:
+    - text: "Hey! Ask me about football players or squads from the 2024/25 dataset."
+  utter_goodbye:
+    - text: "See you!"
+  utter_thanks:
+    - text: "You're welcome. See you!"
+  utter_out_of_scope:
+    - text: "I can answer football dataset questions for now. Try a player or team name."
+  utter_ask_rephrase:
+    - text: "I did not catch that. Could you ask with a player or team name?"
+
+actions:
+  - action_player_info
+  - action_team_squad
+  - action_player_position
+  - action_player_nationality
+  - action_player_stats
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

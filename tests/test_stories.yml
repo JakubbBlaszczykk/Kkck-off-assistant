@@ -1,0 +1,16 @@
+version: "3.1"
+
+stories:
+  - story: user asks about a player
+    steps:
+      - user: |
+          tell me about Erling Haaland
+        intent: ask_player_info
+      - action: action_player_info
+
+  - story: user asks about a squad
+    steps:
+      - user: |
+          who plays for Arsenal
+        intent: ask_team_squad
+      - action: action_team_squad

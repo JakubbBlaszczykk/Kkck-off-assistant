@@ -1,0 +1,73 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - hey
+      - good morning
+      - what's up
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you
+      - quit
+      - that's all
+
+  - intent: thank
+    examples: |
+      - thanks
+      - thank you
+      - thx
+      - great thanks
+      - thanks a lot
+
+  - intent: ask_player_info
+    examples: |
+      - tell me about [Erling Haaland](player_name)
+      - who is [Kylian Mbappe](player_name)
+      - describe [Bukayo Saka](player_name)
+      - give me information about [Pedri](player_name)
+      - what do you know about [Mohamed Salah](player_name)
+      - player info for [Robert Lewandowski](player_name)
+
+  - intent: ask_team_squad
+    examples: |
+      - who plays for [Arsenal](team_name)
+      - show me [Real Madrid](team_name)'s squad
+      - [Barcelona](team_name) squad
+      - list players from [Manchester City](team_name)
+      - who is in [Liverpool](team_name)
+      - give me the [Bayern Munich](team_name) team
+
+  - intent: ask_player_position
+    examples: |
+      - what position does [Erling Haaland](player_name) play
+      - where does [Pedri](player_name) play
+      - what is [Vinicius Junior](player_name)'s role
+      - position of [Jude Bellingham](player_name)
+
+  - intent: ask_player_nationality
+    examples: |
+      - where is [Robert Lewandowski](player_name) from
+      - what nationality is [Kylian Mbappe](player_name)
+      - which country does [Mohamed Salah](player_name) represent
+      - nationality of [Bukayo Saka](player_name)
+
+  - intent: ask_player_stats
+    examples: |
+      - how many goals did [Erling Haaland](player_name) score
+      - [Kylian Mbappe](player_name) stats
+      - show me [Jude Bellingham](player_name)'s numbers
+      - goals and assists for [Mohamed Salah](player_name)
+      - how many minutes did [Pedri](player_name) play
+
+  - intent: out_of_scope
+    examples: |
+      - what is the weather
+      - tell me a joke
+      - order pizza
+      - what time is it
