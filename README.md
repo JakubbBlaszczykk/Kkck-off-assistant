@@ -224,7 +224,7 @@ start_quiz → [ActionStartQuiz] → question
 
 ## 👤 Author
 
-**[Your Name]**
+**Jakub Błaszczyk**
 Erasmus Student @ University of Aveiro - DETI
 Home university: Lodz University of Technology
 Course: Introduction to Speech and Natural Language Processing, 2025/2026
