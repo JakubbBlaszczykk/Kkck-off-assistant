@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KickOff Assistant Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="stage" aria-label="KickOff Assistant conversation">
+        <div class="brand">
+          <span class="mark" aria-hidden="true"></span>
+          <div>
+            <p>KickOff Assistant</p>
+            <h1>Raza</h1>
+          </div>
+        </div>
+
+        <div class="conversation" id="conversation" aria-live="polite">
+          <article class="bubble bot">
+            <span>Raza</span>
+            <p>Say or type <strong>Hi</strong> to start.</p>
+          </article>
+        </div>
+
+        <form class="composer" id="composer">
+          <button class="icon-button" id="voiceButton" type="button" aria-label="Use microphone" title="Use microphone">
+            <span class="mic-icon" aria-hidden="true"></span>
+          </button>
+          <input id="messageInput" autocomplete="off" placeholder="Say Hi, ask about football, or start quiz" />
+          <button class="send" type="submit">Send</button>
+        </form>
+      </section>
+
+      <aside class="side">
+        <div class="status">
+          <p>Mode</p>
+          <strong id="modeLabel">Waiting</strong>
+        </div>
+        <div class="status">
+          <p>Microphone</p>
+          <strong id="micStatusLabel">Ready</strong>
+        </div>
+        <div class="status">
+          <p>Voice Output</p>
+          <strong id="ttsStatusLabel">On</strong>
+        </div>
+        <div class="scoreboard">
+          <p>Quiz Score</p>
+          <strong><span id="scoreLabel">0</span>/<span id="totalLabel">7</span></strong>
+          <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
+        </div>
+        <div class="quick-actions">
+          <button type="button" data-prompt="Hi">Hi</button>
+          <button type="button" data-prompt="I want to ask a football question">Football question</button>
+          <button type="button" data-prompt="Let's do a quiz">Quiz</button>
+          <button type="button" id="voiceOutputButton">Voice output on</button>
+        </div>
+      </aside>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from kickoff_assistant.knowledge_base import KnowledgeBase
+from kickoff_assistant import responses
 
 
 def entity_value(tracker: Tracker, entity_name: str) -> str:
@@ -43,7 +44,7 @@ class ActionPlayerInfo(KnowledgeAction):
     ) -> list[dict[str, Any]]:
         player = self.knowledge_base().find_player(entity_value(tracker, "player_name"))
         if not player:
-            dispatcher.utter_message(text="I could not find that player in the processed dataset.")
+            dispatcher.utter_message(text=responses.not_found("player"))
             return []
 
         dispatcher.utter_message(text=self.knowledge_base().player_info(player))
@@ -62,7 +63,7 @@ class ActionTeamSquad(KnowledgeAction):
     ) -> list[dict[str, Any]]:
         team = self.knowledge_base().find_team(entity_value(tracker, "team_name"))
         if not team:
-            dispatcher.utter_message(text="I could not find that team in the processed dataset.")
+            dispatcher.utter_message(text=responses.not_found("team"))
             return []
 
         dispatcher.utter_message(text=self.knowledge_base().team_squad(team))
@@ -81,10 +82,10 @@ class ActionPlayerPosition(KnowledgeAction):
     ) -> list[dict[str, Any]]:
         player = self.knowledge_base().find_player(entity_value(tracker, "player_name"))
         if not player:
-            dispatcher.utter_message(text="I could not find that player in the processed dataset.")
+            dispatcher.utter_message(text=responses.not_found("player"))
             return []
 
-        dispatcher.utter_message(text=f"{player['name']} plays as: {player['position']}.")
+        dispatcher.utter_message(text=responses.player_position(player))
         return []
 
 
@@ -100,10 +101,10 @@ class ActionPlayerNationality(KnowledgeAction):
     ) -> list[dict[str, Any]]:
         player = self.knowledge_base().find_player(entity_value(tracker, "player_name"))
         if not player:
-            dispatcher.utter_message(text="I could not find that player in the processed dataset.")
+            dispatcher.utter_message(text=responses.not_found("player"))
             return []
 
-        dispatcher.utter_message(text=f"{player['name']} represents {player['nationality']}.")
+        dispatcher.utter_message(text=responses.player_nationality(player))
         return []
 
 
@@ -119,14 +120,8 @@ class ActionPlayerStats(KnowledgeAction):
     ) -> list[dict[str, Any]]:
         player = self.knowledge_base().find_player(entity_value(tracker, "player_name"))
         if not player:
-            dispatcher.utter_message(text="I could not find that player in the processed dataset.")
+            dispatcher.utter_message(text=responses.not_found("player"))
             return []
 
-        dispatcher.utter_message(
-            text=(
-                f"{player['name']} recorded {player['goals']} goals, "
-                f"{player['assists']} assists, and {player['minutes']} minutes "
-                f"in {player['matches']} matches."
-            )
-        )
+        dispatcher.utter_message(text=responses.player_stats(player))
         return []

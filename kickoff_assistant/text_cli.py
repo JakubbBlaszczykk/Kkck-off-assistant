@@ -3,7 +3,9 @@ from __future__ import annotations
 import sys
 from typing import Optional
 
+from kickoff_assistant import responses
 from kickoff_assistant.knowledge_base import KnowledgeBase
+from kickoff_assistant.quiz import QuizSession, load_questions
 
 
 HELP_TEXT = (
@@ -21,14 +23,11 @@ def player_answer(message: str, kb: KnowledgeBase, player: dict[str, object]) ->
     if any(phrase in text for phrase in ["which team", "what team", "team of", "club", "where"]) and "from" not in text:
         return kb.player_teams(player)
     if any(word in text for word in ["position", "where does", "role"]):
-        return f"{player['name']} plays as: {player['position']}."
+        return responses.player_position(player)
     if any(word in text for word in ["nationality", "from", "country"]):
-        return f"{player['name']} represents {player['nationality']}."
+        return responses.player_nationality(player)
     if any(word in text for word in ["goals", "assists", "stats", "numbers", "scored"]):
-        return (
-            f"{player['name']} recorded {player['goals']} goals and "
-            f"{player['assists']} assists in {player['matches']} matches."
-        )
+        return responses.player_stats(player)
     if "asked" in text or "sorry" in text or "not" in text:
         return f"Sorry, you're right. {kb.player_info(player)}"
     return kb.player_info(player)
@@ -37,11 +36,11 @@ def player_answer(message: str, kb: KnowledgeBase, player: dict[str, object]) ->
 def answer(message: str, kb: KnowledgeBase) -> str:
     text = message.casefold().strip()
     if not text:
-        return "Type a football question or 'help'."
+        return responses.help_prompt()
     if text in {"help", "commands"}:
         return HELP_TEXT
     if text in GREETINGS:
-        return "Hey! Ask me about players or squads from the 2024/25 Top 5 leagues dataset."
+        return responses.intro()
     if text in {"thanks", "thank you", "thx"}:
         return "You're welcome. See you!"
 
@@ -86,7 +85,7 @@ def answer(message: str, kb: KnowledgeBase) -> str:
         team = kb.find_team(message)
         if team:
             return kb.team_squad(team, limit=50 if "all" in text else 15)
-        return "I could not find that team in the processed dataset."
+        return responses.not_found("team")
 
     team = kb.find_team(message)
     if team and any(phrase in text for phrase in ["what is", "tell me about", "something about"]):
@@ -96,7 +95,7 @@ def answer(message: str, kb: KnowledgeBase) -> str:
     if player:
         return player_answer(message, kb, player)
 
-    return "I can only answer football dataset questions for now. Try a player or team name."
+    return responses.out_of_scope()
 
 
 def ambiguity_prompt(candidates: list[dict[str, object]]) -> str:
@@ -112,8 +111,10 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8")
 
     kb = KnowledgeBase.load()
+    quiz_questions = load_questions()
     greeted = False
     pending_disambiguation: Optional[dict[str, object]] = None
+    quiz: Optional[QuizSession] = None
     print("KickOff Assistant text mode. Start with 'hello'. Type 'help' for examples, 'bye' to exit.")
 
     while True:
@@ -139,7 +140,19 @@ def main() -> None:
                 continue
 
         if text in GREETINGS and greeted:
-            print("Bot: Hey! Ask me about players or squads from the 2024/25 Top 5 leagues dataset.")
+            print(f"Bot: {responses.intro()}")
+            continue
+
+        if text in {"quiz", "start quiz", "let's quiz", "lets quiz", "play quiz", "test me"}:
+            quiz = QuizSession.create(quiz_questions)
+            print(f"Bot: Great, seven questions. {quiz.prompt()}")
+            continue
+
+        if quiz:
+            reply, _ = quiz.answer(message)
+            print(f"Bot: {reply}")
+            if quiz.finished:
+                quiz = None
             continue
 
         if text in {"quit", "exit", "bye", "goodbye"}:

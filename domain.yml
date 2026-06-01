@@ -29,15 +29,26 @@ slots:
 
 responses:
   utter_greet:
-    - text: "Hey! Ask me about football players or squads from the 2024/25 dataset."
+    - text: "Hi, I'm Raza. You can ask me a football question, or you can play a football quiz."
+    - text: "Hey, I'm Raza. Ask me about football data, or you can play a football quiz."
+    - text: "Hello, I'm Raza. I can answer 2024/25 football dataset questions, or you can play a football quiz."
+    - text: "Hi there. You can ask about football data, or play the football quiz."
   utter_goodbye:
     - text: "See you!"
+    - text: "Thanks for the chat. See you next time."
+    - text: "All right, speak soon."
   utter_thanks:
-    - text: "You're welcome. See you!"
+    - text: "You're welcome."
+    - text: "No problem."
+    - text: "Any time."
   utter_out_of_scope:
-    - text: "I can answer football dataset questions for now. Try a player or team name."
+    - text: "I can stay useful on football questions for now. Try a player, team, league, or say quiz."
+    - text: "That is outside my football dataset, but I can answer player and squad questions."
+    - text: "I don't have that topic covered yet. Football data and the quiz are my strong areas."
   utter_ask_rephrase:
     - text: "I did not catch that. Could you ask with a player or team name?"
+    - text: "Could you rephrase that with the player or club name?"
+    - text: "I'm not sure which football item you mean. Try the full player or team name."
 
 actions:
   - action_player_info
