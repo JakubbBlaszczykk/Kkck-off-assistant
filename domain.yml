@@ -29,10 +29,10 @@ slots:
 
 responses:
   utter_greet:
-    - text: "Hi, I'm Raza. You can ask me a football question, or you can play a football quiz."
-    - text: "Hey, I'm Raza. Ask me about football data, or you can play a football quiz."
-    - text: "Hello, I'm Raza. I can answer 2024/25 football dataset questions, or you can play a football quiz."
-    - text: "Hi there. You can ask about football data, or play the football quiz."
+    - text: "Hi! I'm Kick-Off Assistant. You can ask me a football question, or you can play a football quiz."
+    - text: "Hey! I'm Kick-Off Assistant. Ask me about football data from the Top 5 Leagues, or you can play a football quiz."
+    - text: "Hello! I'm Kick-Off Assistant. I can answer questions about the Top 5 Leagues Season 2024/25, or you can play a football quiz."
+    - text: "Hi there! I'm Kick-Off Assistant. You can ask about football data, or play the football quiz."
   utter_goodbye:
     - text: "See you!"
     - text: "Thanks for the chat. See you next time."
@@ -43,7 +43,7 @@ responses:
     - text: "Any time."
   utter_out_of_scope:
     - text: "I can stay useful on football questions for now. Try a player, team, league, or say quiz."
-    - text: "That is outside my football dataset, but I can answer player and squad questions."
+    - text: "That is outside my Top 5 Leagues data, but I can answer player and squad questions."
     - text: "I don't have that topic covered yet. Football data and the quiz are my strong areas."
   utter_ask_rephrase:
     - text: "I did not catch that. Could you ask with a player or team name?"

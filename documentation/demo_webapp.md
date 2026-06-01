@@ -2,30 +2,45 @@
 
 ## What Was Added
 
-This update adds a lightweight browser demo for Raza, the KickOff Assistant. The demo is designed for a classroom presentation: the user starts with "Hi", then chooses between asking football questions and playing a seven-question quiz.
+This update adds a browser demo for Kick-Off Assistant, a football knowledge companion. The demo is designed for a classroom presentation: the user starts by saying "Hi", then chooses between asking football questions about the Top 5 European Leagues (Season 2024/25) and playing a seven-question quiz.
 
 The implementation is intentionally simple. It does not train a new keyword spotting model or add a CNN. Voice input uses the browser's Web Speech API when available, and voice output uses the browser's speech synthesis.
 
-## New Files
+## Visual Design
 
-- `kickoff_assistant/responses.py` - natural response templates for greetings, player facts, stats, fallback messages, and team squads.
-- `kickoff_assistant/quiz.py` - quiz loading, seven-question quiz sessions, answer normalization, aliases, and fuzzy matching.
-- `kickoff_assistant/web_app.py` - a small HTTP server using only Python's standard library.
-- `web/index.html` - the main demo UI.
-- `web/styles.css` - visual styling for the demo page.
-- `web/app.js` - chat behavior, microphone handling, speech synthesis, and score updates.
-- `data/quiz_questions.json` - 50 simple questions generated from the processed 2024/25 football dataset.
+The web demo uses a football stadium theme inspired by pixel-art aesthetics:
+
+- **Dark blue stadium night-sky** background with floodlight gradient effects.
+- **Pixel font** (`Press Start 2P`) for titles and labels, `Inter` for body text.
+- **Three-column layout**: left coverage panel, central chat area, right info panel.
+- **Left panel**: shows "Season 2024/25" badge and Top 5 Leagues with flag emojis (🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League, 🇪🇸 LaLiga, 🇮🇹 Serie A, 🇩🇪 Bundesliga, 🇫🇷 Ligue 1), plus mode/mic/voice status indicators.
+- **Center chat area**: speech-bubble styled messages with soccer ball avatars, animated bubble entrance.
+- **Right panel**: "What Can You Do?" section with ASK and QUIZ cards, quiz scoreboard with progress meter, and quick-action buttons.
+- **Input bar**: football-themed with a soccer ball icon, microphone button, and glowing green SEND button.
+- **Floating particle animations** for stadium atmosphere.
+- Responsive design: collapses to single column on mobile.
+
+## Files
+
+- `kickoff_assistant/responses.py` — natural response templates with nationality-to-name and position-to-name mappings for human-readable output.
+- `kickoff_assistant/quiz.py` — quiz loading, seven-question quiz sessions, answer normalization, aliases, and fuzzy matching.
+- `kickoff_assistant/web_app.py` — a small HTTP server using only Python's standard library.
+- `web/index.html` — the main demo UI with three-column layout.
+- `web/styles.css` — football stadium theme styling with pixel-art aesthetics.
+- `web/app.js` — chat behavior, microphone handling, speech synthesis, and score updates.
+- `data/quiz_questions.json` — 50 simple questions generated from the Top 5 Leagues Season 2024/25 football data.
 
 ## Conversation Flow
 
-1. The page initially asks the user to say or type "Hi".
-2. Raza replies with one of several natural greeting variants.
-3. The user can choose:
+1. The page initially shows a welcome message from Kick-Off Assistant.
+2. The user says or types "Hi" to start.
+3. Kick-Off Assistant replies with one of several natural greeting variants.
+4. The user can choose:
    - a football question mode,
    - a quiz mode.
-4. In football question mode, the existing knowledge base is reused.
-5. In quiz mode, Raza asks seven questions and tracks the score.
-6. After the seventh question, Raza gives the final score and lets the user restart the quiz or ask a football question.
+5. In football question mode, the existing knowledge base is reused. Responses use natural language with full nationality names (e.g. "Polish" instead of "POL") and full position names (e.g. "forward" instead of "FW").
+6. In quiz mode, Kick-Off Assistant asks seven questions and tracks the score.
+7. After the seventh question, the final score is given and the user can restart the quiz or ask a football question.
 
 ## Quiz Answer Matching
 
@@ -67,7 +82,7 @@ Speech output uses `speechSynthesis`, which is available in most modern browsers
 - current mode,
 - quiz score.
 
-There is also a `Voice output on/off` button. This is useful during testing because browser speech synthesis can be muted, blocked, or interrupted by the operating system audio output.
+There is also a voice output toggle button. This is useful during testing because browser speech synthesis can be muted, blocked, or interrupted by the operating system audio output.
 
 For the microphone to work reliably:
 
@@ -89,3 +104,4 @@ Voice output only selects voices whose language starts with `en`. This prevents 
 - The quiz currently samples seven questions from the local 50-question JSON file.
 - The demo uses the processed dataset already present in `data/processed`.
 - The UI is English-first for presentation purposes.
+- The pixel font (`Press Start 2P`) is loaded from Google Fonts and requires an internet connection on first load.

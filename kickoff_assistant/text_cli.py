@@ -49,7 +49,7 @@ def answer(message: str, kb: KnowledgeBase) -> str:
 
     if any(word in text for word in ["won", "winner", "champion", "title"]):
         return (
-            "I do not have league winners in this player dataset yet. "
+            "I do not have league winners in the Top 5 Leagues season data yet. "
             "For now I can answer player, team squad, position, nationality, and stats questions."
         )
 
@@ -115,7 +115,7 @@ def main() -> None:
     greeted = False
     pending_disambiguation: Optional[dict[str, object]] = None
     quiz: Optional[QuizSession] = None
-    print("KickOff Assistant text mode. Start with 'hello'. Type 'help' for examples, 'bye' to exit.")
+    print("Kick-Off Assistant text mode. Start with 'hello'. Type 'help' for examples, 'bye' to exit.")
 
     while True:
         try:
