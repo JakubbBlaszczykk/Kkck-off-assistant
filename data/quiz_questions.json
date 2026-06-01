@@ -1,0 +1,444 @@
+[
+    {
+        "question":  "Which club does Jordan Pickford play for in the 2024/25 dataset?",
+        "answer":  "Everton",
+        "accepted_answers":  [
+                                 "Everton",
+                                 "Everton",
+                                 "Everton"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Obite N\u0027Dicka play for in the 2024/25 dataset?",
+        "answer":  "Roma",
+        "accepted_answers":  [
+                                 "Roma",
+                                 "Roma",
+                                 "Roma"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Federico Baschirotto play for in the 2024/25 dataset?",
+        "answer":  "Lecce",
+        "accepted_answers":  [
+                                 "Lecce",
+                                 "Lecce",
+                                 "Lecce"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does David Soria play for in the 2024/25 dataset?",
+        "answer":  "Getafe",
+        "accepted_answers":  [
+                                 "Getafe",
+                                 "Getafe",
+                                 "Getafe"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Bernd Leno play for in the 2024/25 dataset?",
+        "answer":  "Fulham",
+        "accepted_answers":  [
+                                 "Fulham",
+                                 "Fulham",
+                                 "Fulham"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Matz Sels play for in the 2024/25 dataset?",
+        "answer":  "Nott\u0027ham Forest",
+        "accepted_answers":  [
+                                 "Nott\u0027ham Forest",
+                                 "Nott\u0027ham Forest",
+                                 "Nottham Forest"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Nathan Collins play for in the 2024/25 dataset?",
+        "answer":  "Brentford",
+        "accepted_answers":  [
+                                 "Brentford",
+                                 "Brentford",
+                                 "Brentford"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Mile Svilar play for in the 2024/25 dataset?",
+        "answer":  "Roma",
+        "accepted_answers":  [
+                                 "Roma",
+                                 "Roma",
+                                 "Roma"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does David Raya play for in the 2024/25 dataset?",
+        "answer":  "Arsenal",
+        "accepted_answers":  [
+                                 "Arsenal",
+                                 "Arsenal",
+                                 "Arsenal"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Dean Henderson play for in the 2024/25 dataset?",
+        "answer":  "Crystal Palace",
+        "accepted_answers":  [
+                                 "Crystal Palace",
+                                 "Crystal Palace",
+                                 "Crystal Palace"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Joan García play for in the 2024/25 dataset?",
+        "answer":  "Espanyol",
+        "accepted_answers":  [
+                                 "Espanyol",
+                                 "Espanyol",
+                                 "Espanyol"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Wladimiro Falcone play for in the 2024/25 dataset?",
+        "answer":  "Lecce",
+        "accepted_answers":  [
+                                 "Lecce",
+                                 "Lecce",
+                                 "Lecce"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Bryan Mbeumo play for in the 2024/25 dataset?",
+        "answer":  "Brentford",
+        "accepted_answers":  [
+                                 "Brentford",
+                                 "Brentford",
+                                 "Brentford"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Amir Rrahmani play for in the 2024/25 dataset?",
+        "answer":  "Napoli",
+        "accepted_answers":  [
+                                 "Napoli",
+                                 "Napoli",
+                                 "Napoli"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "Which club does Mohamed Salah play for in the 2024/25 dataset?",
+        "answer":  "Liverpool",
+        "accepted_answers":  [
+                                 "Liverpool",
+                                 "Liverpool",
+                                 "Liverpool"
+                             ],
+        "category":  "player_team"
+    },
+    {
+        "question":  "How many goals did Kylian Mbappé score in the 2024/25 dataset?",
+        "answer":  "31",
+        "accepted_answers":  [
+                                 "31"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Mohamed Salah score in the 2024/25 dataset?",
+        "answer":  "29",
+        "accepted_answers":  [
+                                 "29"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Robert Lewandowski score in the 2024/25 dataset?",
+        "answer":  "27",
+        "accepted_answers":  [
+                                 "27"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Harry Kane score in the 2024/25 dataset?",
+        "answer":  "26",
+        "accepted_answers":  [
+                                 "26"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Mateo Retegui score in the 2024/25 dataset?",
+        "answer":  "25",
+        "accepted_answers":  [
+                                 "25"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Alexander Isak score in the 2024/25 dataset?",
+        "answer":  "23",
+        "accepted_answers":  [
+                                 "23"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Erling Haaland score in the 2024/25 dataset?",
+        "answer":  "22",
+        "accepted_answers":  [
+                                 "22"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Ante Budimir score in the 2024/25 dataset?",
+        "answer":  "21",
+        "accepted_answers":  [
+                                 "21"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Ousmane Dembélé score in the 2024/25 dataset?",
+        "answer":  "21",
+        "accepted_answers":  [
+                                 "21"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many goals did Serhou Guirassy score in the 2024/25 dataset?",
+        "answer":  "21",
+        "accepted_answers":  [
+                                 "21"
+                             ],
+        "category":  "player_goals"
+    },
+    {
+        "question":  "How many assists did Mohamed Salah make in the 2024/25 dataset?",
+        "answer":  "18",
+        "accepted_answers":  [
+                                 "18"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Michael Olise make in the 2024/25 dataset?",
+        "answer":  "15",
+        "accepted_answers":  [
+                                 "15"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Lamine Yamal make in the 2024/25 dataset?",
+        "answer":  "13",
+        "accepted_answers":  [
+                                 "13"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Jacob Murphy make in the 2024/25 dataset?",
+        "answer":  "12",
+        "accepted_answers":  [
+                                 "12"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Florian Wirtz make in the 2024/25 dataset?",
+        "answer":  "12",
+        "accepted_answers":  [
+                                 "12"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Gaëtan Perrin make in the 2024/25 dataset?",
+        "answer":  "11",
+        "accepted_answers":  [
+                                 "11"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Rayan Cherki make in the 2024/25 dataset?",
+        "answer":  "11",
+        "accepted_answers":  [
+                                 "11"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "How many assists did Anthony Elanga make in the 2024/25 dataset?",
+        "answer":  "11",
+        "accepted_answers":  [
+                                 "11"
+                             ],
+        "category":  "player_assists"
+    },
+    {
+        "question":  "What position is listed for Jordan Pickford?",
+        "answer":  "GK",
+        "accepted_answers":  [
+                                 "GK",
+                                 "GK"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for Obite N\u0027Dicka?",
+        "answer":  "DF",
+        "accepted_answers":  [
+                                 "DF",
+                                 "DF"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for Federico Baschirotto?",
+        "answer":  "DF",
+        "accepted_answers":  [
+                                 "DF",
+                                 "DF"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for David Soria?",
+        "answer":  "GK",
+        "accepted_answers":  [
+                                 "GK",
+                                 "GK"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for Bernd Leno?",
+        "answer":  "GK",
+        "accepted_answers":  [
+                                 "GK",
+                                 "GK"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for Matz Sels?",
+        "answer":  "GK",
+        "accepted_answers":  [
+                                 "GK",
+                                 "GK"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for Nathan Collins?",
+        "answer":  "DF",
+        "accepted_answers":  [
+                                 "DF",
+                                 "DF"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What position is listed for Mile Svilar?",
+        "answer":  "GK",
+        "accepted_answers":  [
+                                 "GK",
+                                 "GK"
+                             ],
+        "category":  "player_position"
+    },
+    {
+        "question":  "What nationality is listed for Kylian Mbappé?",
+        "answer":  "FRA",
+        "accepted_answers":  [
+                                 "FRA"
+                             ],
+        "category":  "player_nationality"
+    },
+    {
+        "question":  "What nationality is listed for Mohamed Salah?",
+        "answer":  "EGY",
+        "accepted_answers":  [
+                                 "EGY"
+                             ],
+        "category":  "player_nationality"
+    },
+    {
+        "question":  "What nationality is listed for Robert Lewandowski?",
+        "answer":  "POL",
+        "accepted_answers":  [
+                                 "POL"
+                             ],
+        "category":  "player_nationality"
+    },
+    {
+        "question":  "What nationality is listed for Harry Kane?",
+        "answer":  "ENG",
+        "accepted_answers":  [
+                                 "ENG"
+                             ],
+        "category":  "player_nationality"
+    },
+    {
+        "question":  "What nationality is listed for Mateo Retegui?",
+        "answer":  "ITA",
+        "accepted_answers":  [
+                                 "ITA"
+                             ],
+        "category":  "player_nationality"
+    },
+    {
+        "question":  "Which league is Alavés in?",
+        "answer":  "La Liga",
+        "accepted_answers":  [
+                                 "La Liga",
+                                 "LaLiga"
+                             ],
+        "category":  "team_league"
+    },
+    {
+        "question":  "Which league is Angers in?",
+        "answer":  "Ligue 1",
+        "accepted_answers":  [
+                                 "Ligue 1",
+                                 "Ligue1"
+                             ],
+        "category":  "team_league"
+    },
+    {
+        "question":  "Which league is Arsenal in?",
+        "answer":  "Premier League",
+        "accepted_answers":  [
+                                 "Premier League",
+                                 "PremierLeague"
+                             ],
+        "category":  "team_league"
+    },
+    {
+        "question":  "Which league is Aston Villa in?",
+        "answer":  "Premier League",
+        "accepted_answers":  [
+                                 "Premier League",
+                                 "PremierLeague"
+                             ],
+        "category":  "team_league"
+    }
+]

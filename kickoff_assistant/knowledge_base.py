@@ -8,6 +8,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Optional
 
+from kickoff_assistant import responses
+
 
 DEFAULT_DATA_DIR = Path("data/processed")
 STOPWORDS = {
@@ -271,12 +273,7 @@ class KnowledgeBase:
         return None
 
     def player_info(self, player: dict[str, Any]) -> str:
-        return (
-            f"{player['name']} is a {player['nationality']} {player['position']} "
-            f"for {player['team']} in {player['league']}. "
-            f"2024/25: {player['matches']} matches, {player['minutes']} minutes, "
-            f"{player['goals']} goals, {player['assists']} assists."
-        )
+        return responses.player_info(player)
 
     def player_records(self, player: dict[str, Any]) -> list[dict[str, Any]]:
         name = normalize(str(player["name"]))
@@ -349,8 +346,7 @@ class KnowledgeBase:
     def team_squad(self, team: dict[str, Any], limit: int = 15) -> str:
         squad = list(team.get("squad", []))
         shown = ", ".join(squad[:limit])
-        suffix = f" and {len(squad) - limit} more" if len(squad) > limit else ""
-        return f"{team['name']} ({team['league']}) squad includes: {shown}{suffix}."
+        return responses.team_squad(team, shown, max(0, len(squad) - limit))
 
     def teams_in_league(self, league: str) -> str:
         teams = sorted(
