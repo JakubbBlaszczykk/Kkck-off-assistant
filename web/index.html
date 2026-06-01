@@ -3,62 +3,139 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KickOff Assistant Demo</title>
+    <title>Kick-Off Assistant — Your Football Knowledge Companion</title>
+    <meta name="description" content="Ask questions about the Top 5 European football leagues from Season 2024/25. Play quizzes, explore player stats, and test your football knowledge." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <main class="shell">
-      <section class="stage" aria-label="KickOff Assistant conversation">
-        <div class="brand">
-          <span class="mark" aria-hidden="true"></span>
-          <div>
-            <p>KickOff Assistant</p>
-            <h1>Raza</h1>
+    <!-- Animated background particles -->
+    <div class="bg-particles" aria-hidden="true">
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+      <div class="particle p5"></div>
+    </div>
+
+    <header class="top-bar" id="topBar">
+      <div class="top-bar-inner">
+        <div class="logo-area">
+          <span class="logo-ball" aria-hidden="true">⚽</span>
+          <div class="logo-text">
+            <h1>KICK-OFF<br /><span class="logo-accent">ASSISTANT</span></h1>
+            <span class="logo-trophy" aria-hidden="true">🏆</span>
           </div>
+        </div>
+        <p class="tagline">YOUR FOOTBALL KNOWLEDGE COMPANION</p>
+      </div>
+    </header>
+
+    <main class="shell">
+      <!-- Left Panel: Coverage -->
+      <aside class="panel panel-left" id="panelLeft">
+        <div class="panel-section coverage-section">
+          <p class="panel-label">Coverage</p>
+          <div class="season-badge">SEASON 2024/25</div>
+        </div>
+        <div class="panel-section leagues-section">
+          <p class="panel-label">Top 5 Leagues</p>
+          <ul class="league-list">
+            <li><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> Premier League</li>
+            <li><span class="flag">🇪🇸</span> LaLiga</li>
+            <li><span class="flag">🇮🇹</span> Serie A</li>
+            <li><span class="flag">🇩🇪</span> Bundesliga</li>
+            <li><span class="flag">🇫🇷</span> Ligue 1</li>
+          </ul>
+        </div>
+        <!-- Status indicators -->
+        <div class="panel-section status-section">
+          <div class="status-row">
+            <span class="status-dot" id="modeDot"></span>
+            <span class="status-label">Mode</span>
+            <strong id="modeLabel">Waiting</strong>
+          </div>
+          <div class="status-row">
+            <span class="status-dot mic-dot"></span>
+            <span class="status-label">Mic</span>
+            <strong id="micStatusLabel">Ready</strong>
+          </div>
+          <div class="status-row">
+            <span class="status-dot tts-dot"></span>
+            <span class="status-label">Voice</span>
+            <strong id="ttsStatusLabel">On</strong>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center: Chat Area -->
+      <section class="stage" aria-label="Kick-Off Assistant conversation">
+        <div class="stage-header">
+          <span class="chat-icon" aria-hidden="true">💬</span>
+          <p class="stage-subtitle">ASK QUESTIONS. GET ANSWERS. PLAY QUIZ. TEST YOUR KNOWLEDGE.</p>
         </div>
 
         <div class="conversation" id="conversation" aria-live="polite">
-          <article class="bubble bot">
-            <span>Raza</span>
-            <p>Say or type <strong>Hi</strong> to start.</p>
+          <article class="bubble bot welcome-bubble">
+            <div class="bubble-avatar" aria-hidden="true">⚽</div>
+            <div class="bubble-content">
+              <span>Kick-Off</span>
+              <p>Hi! I'm <strong>Kick-Off Assistant</strong>. Ask me anything about the Top 5 Leagues from Season 2024/25!</p>
+            </div>
           </article>
         </div>
 
         <form class="composer" id="composer">
+          <div class="composer-ball" aria-hidden="true">⚽</div>
           <button class="icon-button" id="voiceButton" type="button" aria-label="Use microphone" title="Use microphone">
             <span class="mic-icon" aria-hidden="true"></span>
           </button>
-          <input id="messageInput" autocomplete="off" placeholder="Say Hi, ask about football, or start quiz" />
-          <button class="send" type="submit">Send</button>
+          <input id="messageInput" autocomplete="off" placeholder="Type your question here..." />
+          <button class="send" type="submit" id="sendButton">SEND <span class="send-arrow" aria-hidden="true">▶</span></button>
         </form>
       </section>
 
-      <aside class="side">
-        <div class="status">
-          <p>Mode</p>
-          <strong id="modeLabel">Waiting</strong>
+      <!-- Right Panel: Info & Quiz -->
+      <aside class="panel panel-right" id="panelRight">
+        <div class="panel-section info-section">
+          <p class="panel-label">What Can You Do?</p>
+
+          <div class="info-card" id="infoAsk">
+            <div class="info-icon">💬</div>
+            <div>
+              <strong>ASK</strong>
+              <p>Ask me questions about teams, players, stats, standings, and more!</p>
+            </div>
+          </div>
+
+          <div class="info-card" id="infoQuiz">
+            <div class="info-icon">🏆</div>
+            <div>
+              <strong>QUIZ</strong>
+              <p>Play football quiz and test your knowledge!</p>
+            </div>
+          </div>
         </div>
-        <div class="status">
-          <p>Microphone</p>
-          <strong id="micStatusLabel">Ready</strong>
-        </div>
-        <div class="status">
-          <p>Voice Output</p>
-          <strong id="ttsStatusLabel">On</strong>
-        </div>
-        <div class="scoreboard">
-          <p>Quiz Score</p>
-          <strong><span id="scoreLabel">0</span>/<span id="totalLabel">7</span></strong>
+
+        <div class="panel-section scoreboard-section">
+          <p class="panel-label">Quiz Score</p>
+          <div class="score-display">
+            <strong><span id="scoreLabel">0</span>/<span id="totalLabel">7</span></strong>
+          </div>
           <div class="meter" aria-hidden="true"><span id="meterFill"></span></div>
         </div>
-        <div class="quick-actions">
-          <button type="button" data-prompt="Hi">Hi</button>
-          <button type="button" data-prompt="I want to ask a football question">Football question</button>
-          <button type="button" data-prompt="Let's do a quiz">Quiz</button>
-          <button type="button" id="voiceOutputButton">Voice output on</button>
+
+        <div class="panel-section quick-actions">
+          <button type="button" data-prompt="Hi" class="action-btn">👋 Say Hi</button>
+          <button type="button" data-prompt="I want to ask a football question" class="action-btn">⚽ Football Question</button>
+          <button type="button" data-prompt="Let's do a quiz" class="action-btn accent-btn">🏆 Start Quiz</button>
+          <button type="button" id="voiceOutputButton" class="action-btn voice-btn">🔊 Voice Output On</button>
         </div>
       </aside>
     </main>
+
     <script src="/app.js"></script>
   </body>
 </html>

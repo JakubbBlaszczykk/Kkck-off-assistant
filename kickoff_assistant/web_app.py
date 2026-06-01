@@ -110,7 +110,7 @@ class Handler(SimpleHTTPRequestHandler):
 
 def main() -> None:
     server = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"KickOff Assistant demo running at http://{HOST}:{PORT}")
+    print(f"Kick-Off Assistant demo running at http://{HOST}:{PORT}")
     server.serve_forever()
 
 

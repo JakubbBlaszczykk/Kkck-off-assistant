@@ -39,7 +39,7 @@ if (!window.isSecureContext && location.hostname !== "127.0.0.1" && location.hos
 if (!canSpeak) {
   voiceOutputEnabled = false;
   voiceOutputButton.disabled = true;
-  voiceOutputButton.textContent = "Voice output unavailable";
+  voiceOutputButton.textContent = "🔇 Voice unavailable";
   ttsStatusLabel.textContent = "Unavailable";
 }
 
@@ -67,11 +67,23 @@ if (canSpeak) {
 function addBubble(role, text) {
   const article = document.createElement("article");
   article.className = `bubble ${role}`;
+
+  const avatar = document.createElement("div");
+  avatar.className = "bubble-avatar";
+  avatar.setAttribute("aria-hidden", "true");
+  avatar.textContent = role === "bot" ? "⚽" : "👤";
+
+  const content = document.createElement("div");
+  content.className = "bubble-content";
+
   const name = document.createElement("span");
-  name.textContent = role === "bot" ? "Raza" : "You";
+  name.textContent = role === "bot" ? "Kick-Off" : "You";
+
   const paragraph = document.createElement("p");
   paragraph.textContent = text;
-  article.append(name, paragraph);
+
+  content.append(name, paragraph);
+  article.append(avatar, content);
   conversation.append(article);
   conversation.scrollTop = conversation.scrollHeight;
 }
@@ -233,7 +245,7 @@ voiceOutputButton.addEventListener("click", () => {
   if (!canSpeak) return;
   voiceOutputEnabled = !voiceOutputEnabled;
   window.speechSynthesis.cancel();
-  voiceOutputButton.textContent = voiceOutputEnabled ? "Voice output on" : "Voice output off";
+  voiceOutputButton.textContent = voiceOutputEnabled ? "🔊 Voice Output On" : "🔇 Voice Output Off";
   ttsStatusLabel.textContent = voiceOutputEnabled && selectedVoice ? `On (${selectedVoice.lang})` : "Off";
   if (voiceOutputEnabled) {
     speak("Voice output is on.");

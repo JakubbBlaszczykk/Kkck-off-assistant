@@ -289,7 +289,7 @@ class KnowledgeBase:
             f"{record['team']} ({record['league']}, {record['minutes']} minutes)"
             for record in records
         )
-        return f"{player['name']} has 2024/25 dataset entries for: {teams}."
+        return f"{player['name']} played across multiple clubs in the 2024/25 season: {teams}."
 
     def players_by_nationality(self, nationality: str, limit: int = 15) -> str:
         players = [
@@ -299,7 +299,7 @@ class KnowledgeBase:
         ]
         players.sort(key=lambda item: int(item.get("minutes", 0)), reverse=True)
         if not players:
-            return f"I could not find players from {nationality} in the processed dataset."
+            return f"I could not find players from {nationality} in the Top 5 Leagues 2024/25 season data."
 
         shown = ", ".join(f"{player['name']} ({player['team']})" for player in players[:limit])
         suffix = f" and {len(players) - limit} more" if len(players) > limit else ""
@@ -334,9 +334,9 @@ class KnowledgeBase:
             reverse=True,
         )
         if not scorers:
-            return "I could not find scorers for that competition in the processed dataset."
+            return "I could not find scorers for that competition in the Top 5 Leagues 2024/25 season data."
 
-        label = league or "the 2024/25 Top 5 leagues dataset"
+        label = league or "the Top 5 Leagues Season 2024/25"
         lines = []
         for index, player in enumerate(scorers[:limit], start=1):
             teams = ", ".join(sorted(player["teams"]))
@@ -354,5 +354,5 @@ class KnowledgeBase:
             key=str.casefold,
         )
         if not teams:
-            return f"I could not find teams for {league} in the processed dataset."
-        return f"{league} teams in the 2024/25 dataset: {', '.join(teams)}."
+            return f"I could not find teams for {league} in the Top 5 Leagues 2024/25 season data."
+        return f"{league} teams in the Top 5 Leagues Season 2024/25: {', '.join(teams)}."
